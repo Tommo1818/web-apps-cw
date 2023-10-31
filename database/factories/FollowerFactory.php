@@ -17,7 +17,10 @@ class FollowerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id' => $this->faker->unique()->randomNumber(),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
+            'favourite_player' => $this->faker->randomElement(\App\Models\Player::pluck('in_game_name')->toArray()),
         ];
     }
 }
