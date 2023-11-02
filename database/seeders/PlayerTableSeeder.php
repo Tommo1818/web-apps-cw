@@ -17,6 +17,7 @@ class PlayerTableSeeder extends Seeder
                 'player_id' => 1,
                 'in_game_name' => 's1mple',
                 'date_of_birth' => '1997-10-02',
+                'roles' => 'AWP, Rifler',
                 'team_id' => 1,
                 'country' => 'Ukraine',
             ],
@@ -24,6 +25,7 @@ class PlayerTableSeeder extends Seeder
                 'player_id' => 2,
                 'in_game_name' => 'electronic',
                 'date_of_birth' => '1998-12-28',
+                'roles' => 'Rifler',
                 'team_id' => 1,
                 'country' => 'Ukraine',
 
@@ -32,6 +34,7 @@ class PlayerTableSeeder extends Seeder
                 'player_id' => 3,
                 'in_game_name' => 'flamie',
                 'date_of_birth' => '1997-04-05',
+                'roles' => 'Rifler',
                 'team_id' => 1,
                 'country' => 'Ukraine',
 
@@ -39,6 +42,7 @@ class PlayerTableSeeder extends Seeder
             [
                 'player_id' => 4,
                 'in_game_name' => 'Boombl4',
+                'roles' => 'IGL',
                 'date_of_birth' => '1998-10-20',
                 'team_id' => 1,
                 'country' => 'Russia',
@@ -47,6 +51,7 @@ class PlayerTableSeeder extends Seeder
             [
                 'player_id' => 5,
                 'in_game_name' => 'Perfecto',
+                'roles' => 'Rifler',
                 'date_of_birth' => '2000-01-01',
                 'team_id' => 1,
                 'country' => 'Russia',
@@ -54,6 +59,7 @@ class PlayerTableSeeder extends Seeder
             [
                 'player_id' => 6,
                 'in_game_name' => 'bl4de',
+                'roles' => 'Coach',
                 'date_of_birth' => '1996-01-01',
                 'team_id' => 1,
                 'country' => 'Russia',

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+    public function followers()
+    {
+        return $this->hasMany(Followers::class);
+    }
+
 }

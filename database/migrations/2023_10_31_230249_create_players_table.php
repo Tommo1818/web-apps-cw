@@ -15,9 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('in_game_name');
             $table->date('date_of_birth')->nullable();
-            $table->foreignId('team_id')->constrained();
+            $table->string('roles');
             $table->string('country');
+            $table->bigInteger('team_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('team_id')->references('id')->on('teams')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

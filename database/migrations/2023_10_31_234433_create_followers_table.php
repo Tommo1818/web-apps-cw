@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('favourite_player');
+            $table->bigInteger('favourite_player')->unsigned();
             $table->timestamps();
+
+            $table->foreign('favourite_player')->references('id')->on('players')
+                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
