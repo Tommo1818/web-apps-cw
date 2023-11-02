@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             PlayerTableSeeder::class,
             TeamTableSeeder::class,
             FollowerTableSeeder::class,
+            SponsorTableSeeder::class,
         ]);
     }
 }
