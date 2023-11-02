@@ -12,14 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('followers', function (Blueprint $table) {
-            $table->id();
+            $table->primary(['player_id', 'follower_id']);
             $table->string('name');
             $table->string('email');
             $table->bigInteger('favourite_player')->unsigned();
             $table->timestamps();
 
+            $table->foreign('player_id')->references('id')->on('followers')
+                ->onDelete('cascade')->onUpdate('cascade');
+
             $table->foreign('favourite_player')->references('id')->on('players')
                 ->onDelete('cascade')->onUpdate('cascade');
+                
         });
     }
 
