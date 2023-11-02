@@ -14,7 +14,7 @@ class Player extends Model
     }
     public function followers()
     {
-        return $this->hasMany(Followers::class);
+        return $this->belongsToMany(Followers::class);
     }
 
 }

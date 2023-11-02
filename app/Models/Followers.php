@@ -10,6 +10,6 @@ class Followers extends Model
     use HasFactory;
     public function player()
     {
-        return $this->belongsTo(Player::class);
+        return $this->belongsToMany(Player::class);
     }
 }
