@@ -12,10 +12,9 @@ class SponsorTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $sponsors = [
-            [
-                'sponsor_id' => 1,
-                'name' => 'Logitech',
-            ],
+        $a = new Sponsor;
+        $a->sponsor_id = 1;
+        $a->name = 'Logitech';
+        $a->save();
     }
 }

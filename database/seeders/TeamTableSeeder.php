@@ -12,14 +12,11 @@ class TeamTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $teams = [
-            [
-                'team_id' => 1,
-                'name' => 'Natus Vincere',
-                'country' => 'Ukraine',
-                'sponsor_id' => 1,
-
-            ]
-        ]
+        $a = new Team;
+        $a->team_id = 1;
+        $a->name = 'Natus Vincere';
+        $a->country = 'Ukraine';
+        $a->sponsor_id = 1;
+        $a->save();
     }
 }
