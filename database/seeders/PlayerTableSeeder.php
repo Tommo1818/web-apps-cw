@@ -20,6 +20,9 @@ class PlayerTableSeeder extends Seeder
                 'roles' => 'AWP, Rifler',
                 'team_id' => 1,
                 'country' => 'Ukraine',
+                // link a random follower from the follower table here
+                'follower_id' => 
+
             ],
             [
                 'player_id' => 2,
