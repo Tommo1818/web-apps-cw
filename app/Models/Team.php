@@ -12,8 +12,12 @@ class Team extends Model
     {
         return $this->hasMany(Player::class);
     }
-    public function Sponsor()
+    public function sponsor()
     {
         return $this->hasOne(Sponsor::class);
+    }
+    public function tournaments()
+    {
+        return $this->belongsToMany(Tournament::class);
     }
 }
