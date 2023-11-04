@@ -14,9 +14,6 @@ return new class extends Migration
         Schema::create('tournaments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            //store multiple team ids in an array
-            
-
             $table->timestamps();
         });
     }
