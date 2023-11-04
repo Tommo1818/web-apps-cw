@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Player;
 
 class PlayerTableSeeder extends Seeder
 {
@@ -19,7 +20,6 @@ class PlayerTableSeeder extends Seeder
         $a->roles = 'AWP, Rifler';
         $a->team_id = 1;
         $a->country = 'Ukraine';
-        $a->follower_id = \App\Models\Follower::inRandomOrder()->first()->id;
         $a->save();
 
         $b = new Player;
@@ -29,7 +29,6 @@ class PlayerTableSeeder extends Seeder
         $b->roles = 'Rifler';
         $b->team_id = 1;
         $b->country = 'Ukraine';
-        $b->follower_id = \App\Models\Follower::inRandomOrder()->first()->id;
         $b->save();
 
         $c = new Player;
@@ -39,7 +38,6 @@ class PlayerTableSeeder extends Seeder
         $c->roles = 'Rifler';
         $c->team_id = 1;
         $c->country = 'Ukraine';
-        $c->follower_id = \App\Models\Follower::inRandomOrder()->first()->id;
         $c->save();
 
         $d = new Player;
@@ -49,7 +47,6 @@ class PlayerTableSeeder extends Seeder
         $d->roles = 'IGL, Rifler';
         $d->team_id = 1;
         $d->country = 'Ukraine';
-        $d->follower_id = \App\Models\Follower::inRandomOrder()->first()->id;
         $d->save();
 
         $e = new Player;
@@ -59,7 +56,6 @@ class PlayerTableSeeder extends Seeder
         $e->roles = 'Rifler';
         $e->team_id = 1;
         $e->country = 'Ukraine';
-        $e->follower_id = \App\Models\Follower::inRandomOrder()->first()->id;
         $e->save();
 
         $f = new Player;
@@ -69,7 +65,6 @@ class PlayerTableSeeder extends Seeder
         $f->roles = 'Coach';
         $f->team_id = 1;
         $f->country = 'Ukraine';
-        $f->follower_id = \App\Models\Follower::inRandomOrder()->first()->id;
         $f->save();
     }
 }
