@@ -14,7 +14,7 @@ class TeamTableSeeder extends Seeder
     public function run(): void
     {
         $a = new Team;
-        $a->team_id = 1;
+        $a->id = 1;
         $a->name = 'Natus Vincere';
         $a->country = 'Ukraine';
         $a->sponsor_id = 1;

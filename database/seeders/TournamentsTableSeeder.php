@@ -14,7 +14,7 @@ class TournamentsTableSeeder extends Seeder
     public function run(): void
     {
         $a = new Tournament;
-        $a->tournament_id = 1;
+        $a->id = 1;
         $a->name = 'IEM Katowice 2020';
         $a->location = 'Katowice, Poland';
         $a->save();

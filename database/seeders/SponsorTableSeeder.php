@@ -14,7 +14,7 @@ class SponsorTableSeeder extends Seeder
     public function run(): void
     {
         $a = new Sponsor;
-        $a->sponsor_id = 1;
+        $a->id = 1;
         $a->name = 'Logitech';
         $a->save();
     }

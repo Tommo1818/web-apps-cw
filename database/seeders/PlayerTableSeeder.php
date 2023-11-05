@@ -14,7 +14,7 @@ class PlayerTableSeeder extends Seeder
     public function run(): void
     {
         $a = new Player;
-        $a->player_id = 1;
+        $a->id = 1;
         $a->in_game_name = 's1mple';
         $a->date_of_birth = '1997-10-02';
         $a->roles = 'AWP, Rifler';
@@ -23,7 +23,7 @@ class PlayerTableSeeder extends Seeder
         $a->save();
 
         $b = new Player;
-        $b->player_id = 2;
+        $b->id = 2;
         $b->in_game_name = 'elektronic';
         $b->date_of_birth = '1998-09-02';
         $b->roles = 'Rifler';
@@ -32,7 +32,7 @@ class PlayerTableSeeder extends Seeder
         $b->save();
 
         $c = new Player;
-        $c->player_id = 3;
+        $c->id = 3;
         $c->in_game_name = 'flamie';
         $c->date_of_birth = '1997-04-05';
         $c->roles = 'Rifler';
@@ -41,7 +41,7 @@ class PlayerTableSeeder extends Seeder
         $c->save();
 
         $d = new Player;
-        $d->player_id = 4;
+        $d->id = 4;
         $d->in_game_name = 'Boombl4';
         $d->date_of_birth = '1998-01-20';
         $d->roles = 'IGL, Rifler';
@@ -50,7 +50,7 @@ class PlayerTableSeeder extends Seeder
         $d->save();
 
         $e = new Player;
-        $e->player_id = 5;
+        $e->id = 5;
         $e->in_game_name = 'Perfecto';
         $e->date_of_birth = '2000-01-01';
         $e->roles = 'Rifler';
@@ -59,7 +59,7 @@ class PlayerTableSeeder extends Seeder
         $e->save();
 
         $f = new Player;
-        $f->player_id = 6;
+        $f->id = 6;
         $f->in_game_name = 'bl4de';
         $f->date_of_birth = '1997-01-01';
         $f->roles = 'Coach';
