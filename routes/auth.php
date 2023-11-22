@@ -57,12 +57,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
-    
-    Route::get('/secret', function() {
-        return "secret";
-    })->middleware(['auth']);
+});
 
-    Route::get('/cs2', function() {
-        return view ('cs2');
-    });
+Route::get('/secret', function() {
+    return "secret";
+})->middleware(['auth']);
+
+Route::get('/cs2', function() {
+    return view ('cs2');
 });
