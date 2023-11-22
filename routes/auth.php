@@ -66,3 +66,7 @@ Route::get('/secret', function() {
 Route::get('/cs2', function() {
     return view ('cs2');
 });
+
+Route::get('/teams/{team}', function ($team) {
+    return view('teams', ['team' => $team]);
+});
