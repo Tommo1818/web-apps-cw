@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tournament_team', function (Blueprint $table) {
-            $table->primary(['tournament_id', 'team_id']);
+        Schema::create('team_tournament', function (Blueprint $table) {
+            $table->primary(['team_id', 'tournament_id']);
             $table->bigInteger('tournament_id')->unsigned();
             $table->bigInteger('team_id')->unsigned();
 
@@ -21,10 +21,11 @@ return new class extends Migration
 
             $table->foreign('team_id')->references('id')->on('teams')
                 ->onDelete('cascade')->onUpdate('cascade');
-                
+
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
@@ -34,3 +35,5 @@ return new class extends Migration
         Schema::dropIfExists('tournament_team');
     }
 };
+
+

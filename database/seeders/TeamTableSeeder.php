@@ -19,5 +19,13 @@ class TeamTableSeeder extends Seeder
         $a->country = 'Ukraine';
         $a->sponsor_id = 1;
         $a->save();
+
+        $b = new Team;
+        $b->id = 2;
+        $b->name = 'Astralis';
+        $b->country = 'Denmark';
+        $b->sponsor_id = 1;
+        $b->save();
     }
 }
+

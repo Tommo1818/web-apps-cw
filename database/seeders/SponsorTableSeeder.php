@@ -19,3 +19,6 @@ class SponsorTableSeeder extends Seeder
         $a->save();
     }
 }
+
+
+

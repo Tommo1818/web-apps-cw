@@ -21,3 +21,6 @@ class TournamentsTableSeeder extends Seeder
         $a->teams()->attach(1);
     }
 }
+
+
+

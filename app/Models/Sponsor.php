@@ -10,6 +10,7 @@ class Sponsor extends Model
     use HasFactory;
     public function team()
     {
-        return $this->belongsTo(Team::class);
+        return $this->hasOne(Team::class);
     }
 }
+

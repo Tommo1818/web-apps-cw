@@ -14,3 +14,4 @@ class Tournament extends Model
         return $this->belongsToMany(Team::class);
     }
 }
+

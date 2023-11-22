@@ -10,14 +10,16 @@ class Team extends Model
     use HasFactory;
     public function players()
     {
-        return $this->belongsToMany(Player::class);
+        return $this->hasMany(Player::class);
     }
     public function sponsor()
     {
-        return $this->hasOne(Sponsor::class);
+        return $this->belongsTo(Sponsor::class);
     }
     public function tournaments()
     {
         return $this->belongsToMany(Tournament::class);
     }
 }
+
+

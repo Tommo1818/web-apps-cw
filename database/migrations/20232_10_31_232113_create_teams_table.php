@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('country');
+            //store multiple player ids in an array
             $table->bigInteger('sponsor_id')->unsigned();
             $table->timestamps();
 
@@ -31,3 +32,6 @@ return new class extends Migration
         Schema::dropIfExists('teams');
     }
 };
+
+
+

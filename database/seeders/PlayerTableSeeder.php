@@ -17,7 +17,6 @@ class PlayerTableSeeder extends Seeder
         $a->id = 1;
         $a->in_game_name = 's1mple';
         $a->date_of_birth = '1997-10-02';
-        $a->roles = 'AWP, Rifler';
         $a->team_id = 1;
         $a->country = 'Ukraine';
         $a->save();
@@ -26,7 +25,6 @@ class PlayerTableSeeder extends Seeder
         $b->id = 2;
         $b->in_game_name = 'elektronic';
         $b->date_of_birth = '1998-09-02';
-        $b->roles = 'Rifler';
         $b->team_id = 1;
         $b->country = 'Ukraine';
         $b->save();
@@ -35,7 +33,6 @@ class PlayerTableSeeder extends Seeder
         $c->id = 3;
         $c->in_game_name = 'flamie';
         $c->date_of_birth = '1997-04-05';
-        $c->roles = 'Rifler';
         $c->team_id = 1;
         $c->country = 'Ukraine';
         $c->save();
@@ -44,7 +41,6 @@ class PlayerTableSeeder extends Seeder
         $d->id = 4;
         $d->in_game_name = 'Boombl4';
         $d->date_of_birth = '1998-01-20';
-        $d->roles = 'IGL, Rifler';
         $d->team_id = 1;
         $d->country = 'Ukraine';
         $d->save();
@@ -53,7 +49,6 @@ class PlayerTableSeeder extends Seeder
         $e->id = 5;
         $e->in_game_name = 'Perfecto';
         $e->date_of_birth = '2000-01-01';
-        $e->roles = 'Rifler';
         $e->team_id = 1;
         $e->country = 'Ukraine';
         $e->save();
@@ -62,9 +57,12 @@ class PlayerTableSeeder extends Seeder
         $f->id = 6;
         $f->in_game_name = 'bl4de';
         $f->date_of_birth = '1997-01-01';
-        $f->roles = 'Coach';
         $f->team_id = 1;
         $f->country = 'Ukraine';
         $f->save();
+
+        Player::factory()->count(10)->create();
     }
 }
+
+
