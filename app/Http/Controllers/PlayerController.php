@@ -15,7 +15,7 @@ class PlayerController extends Controller
         $players = Player::all();
         return view('players.index', ['players' => $players]);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -37,7 +37,8 @@ class PlayerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $player = Player::findOrFail($id);
+        return view('players.show', ['player' => $player]);
     }
 
     /**

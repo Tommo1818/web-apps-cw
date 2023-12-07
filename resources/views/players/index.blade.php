@@ -5,7 +5,7 @@
 @section('content')
     <ul>
         @foreach ($players as $player)
-            <li>{{ $player->in_game_name }}</li>
+            <li>{{ $player->in_game_name}} ({{ $player->id}})</li>
         @endforeach
     </ul>
 @endsection
