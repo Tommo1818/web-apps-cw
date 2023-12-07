@@ -1,14 +1,11 @@
+@extends ('layouts.app')
 
-<html>
-    <head>
-        <title>Counter Strike 2</title>
-    </head>
-    <body>
-        <h1>Counter Strike 2 is awesome!</h1>
-        <p>It's an amazing game with intense gameplay and a dedicated community.</p>
-        <p>It's also a great game to watch on Twitch.</p>
-        <p>It's a game that has been around for a long time and has a lot of history.</p>
-    </body>
-</html>
+@section ('title', 'CS2')   <!-- this is the title of the page -->
+
+@section ('content')        <!-- this is the content of the page -->
+    <h1>CS2</h1>
+    <p>CS2 is the best game ever!!</p>
+@endsection
+
 
 

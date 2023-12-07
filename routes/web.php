@@ -28,4 +28,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/cs2', function() {
+    return view ('cs2');
+});
+
+Route::get('/teams/{team}', function ($team) {
+    return view('teams', ['team' => $team]);
+});
+
+Route::get('/players', [PlayerController::class, 'index']);
+
 require __DIR__.'/auth.php';

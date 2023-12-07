@@ -62,11 +62,3 @@ Route::middleware('auth')->group(function () {
 Route::get('/secret', function() {
     return "secret";
 })->middleware(['auth']);
-
-Route::get('/cs2', function() {
-    return view ('cs2');
-});
-
-Route::get('/teams/{team}', function ($team) {
-    return view('teams', ['team' => $team]);
-});
