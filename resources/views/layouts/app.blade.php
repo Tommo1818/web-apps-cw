@@ -11,7 +11,7 @@
         text-decoration: none;
         display: inline-block;
         font-size: 14px;
-        margin: 2px 2px;
+        margin: 0px 0px;
         cursor: pointer;
     }
     main {
