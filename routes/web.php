@@ -37,8 +37,9 @@ Route::get('/teams/{team}', function ($team) {
     return view('teams', ['team' => $team]);
 });
 
-Route::get('/players', [PlayerController::class, 'index']);
+Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
 
-Route::get('/players/{id}', [PlayerController::class, 'show']);
+Route::get('/players/{player}', [PlayerController::class, 'show'])->name('players.show');
+
 
 require __DIR__.'/auth.php';

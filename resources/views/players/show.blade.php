@@ -8,5 +8,7 @@
         <li>{{ $player->date_of_birth }}</li>
         <li>{{ $player->country }}</li>
         <li>{{ $player->team->name }}</li>
+        <button class="btn btn-primary" onclick="window.location='{{ route('players.index')}}'">back to index</button>
     </ul>
+
 @endsection
