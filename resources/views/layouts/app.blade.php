@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+    <style>
+    .button {
+        background-color: #4a6283;
+        border: 1px solid white;
+        color: white;
+        padding: 0px 2px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 2px 2px;
+        cursor: pointer;
+    }
+    main {
+        margin-left: 60px; /* Same as the width of the sidenav */
+        margin-top: 40px;
+    }
+    body {
+        font-family: "Lato", sans-serif;
+        color: white;
+    }
+    </style>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
