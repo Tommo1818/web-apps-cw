@@ -37,7 +37,14 @@ class PlayerController extends Controller
             'team_id' => 'required|integer',
             'country' => 'required|max:255',
         ]);
-        return "passed validation";
+        $a = new Player;
+        $a->in_game_name = $validated['in_game_name'];
+        $a->date_of_birth = $validated['date_of_birth'];
+        $a->team_id = $validated['team_id'];
+        $a->country = $validated['country'];
+        $a->save();
+        session()->flash('message', 'Player added successfully!');
+        return redirect()->route('players.index');
     }
 
 /** 

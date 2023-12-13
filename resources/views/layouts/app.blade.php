@@ -83,6 +83,13 @@
                         </ul>
                     </div>
                 @endif
+                
+                @if (session('message'))
+                    <div style="color: #A6FFA8;">
+                        <p><b>{{ session('message') }}</b></p>
+                    </div>
+                @endif
+
                 <div>
                 @yield('content')
                 </div>

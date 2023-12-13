@@ -17,6 +17,11 @@ class SponsorTableSeeder extends Seeder
         $a->id = 1;
         $a->name = 'Logitech';
         $a->save();
+
+        $b = new Sponsor;
+        $b->id = 0;
+        $b->name = 'None';
+        $b->save();
     }
 }
 
