@@ -16,11 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('country');
             //store multiple player ids in an array
-            $table->bigInteger('sponsor_id')->unsigned();
+
             $table->timestamps();
 
-            $table->foreign('sponsor_id')->references('id')->on('sponsors')
-                ->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

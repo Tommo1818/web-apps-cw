@@ -27,13 +27,15 @@ class TeamController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'country' => 'required|max:255',
-            'sponsor_id' => 'integer',
+            'sponsor_id' => 'integer|nullable',
         ]);
         $a = new Team;
         $a->name = $validated['name'];
         $a->country = $validated['country'];
-        $a->sponsor_id = $validated['sponsor_id'];
         $a->save();
+        $s = Sponsor::findOrFail($validated['sponsor_id']);
+        $s->team_id = $a->id;
+        $s->save();
         session()->flash('message', 'Team added successfully!');
         return redirect()->route('teams.index');
         }
@@ -43,8 +45,9 @@ class TeamController extends Controller
      */
     public function show(string $id)
     {
+        $sponsors = Sponsor::all();
         $team = Team::findOrFail($id);
-        return view('teams.show', ['team' => $team]);
+        return view('teams.show', ['team' => $team], ['sponsor' => Sponsor::where('team_id', $team->id)->first()]);
     }
 
     /**

@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/players/{player}', [PlayerController::class, 'show'])->name('players.show');
     Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
     Route::post('/players', [PlayerController::class, 'store'])->name('players.store');
+    Route::delete('/players/{player}', [PlayerController::class, 'destroy'])->name('players.destroy');
 
     Route::get('/teams/create', [TeamController::class, 'create'])->name('teams.create');
     Route::get('/teams/{team}', [TeamController::class, 'show'])->name('teams.show');

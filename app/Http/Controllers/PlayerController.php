@@ -77,6 +77,9 @@ class PlayerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $player = Player::findOrFail($id);
+        $player->delete();
+        session()->flash('message', 'Player deleted successfully!');
+        return redirect()->route('players.index');
     }
 }

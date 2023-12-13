@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->timestamps();
+            $table->bigInteger('team_id')->unsigned()->nullable();
+            $table->foreign('team_id')->references('id')->on('teams')
+                ->onDelete('set null')->onUpdate('cascade');
         });
     }
 
