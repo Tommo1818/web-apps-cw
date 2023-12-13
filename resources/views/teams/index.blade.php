@@ -13,5 +13,6 @@
     @if (Auth::user()->role == 'admin')
         <a href = "{{ route('teams.create') }}" class="button" style="background-color: #A6FFA8; color: #000000;">add team</a>
     @endif
+    {{ $teams->links() }}
 @endsection
 

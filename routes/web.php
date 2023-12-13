@@ -34,11 +34,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
     Route::post('/players', [PlayerController::class, 'store'])->name('players.store');
     Route::delete('/players/{player}', [PlayerController::class, 'destroy'])->name('players.destroy');
+    Route::get('/players/{player}/edit', [PlayerController::class, 'edit'])->name('players.edit');
+    Route::put('/players/{player}', [PlayerController::class, 'update'])->name('players.update');
 
     Route::get('/teams/create', [TeamController::class, 'create'])->name('teams.create');
     Route::get('/teams/{team}', [TeamController::class, 'show'])->name('teams.show');
     Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
     Route::post('/teams', [TeamController::class, 'store'])->name('teams.store');
+    Route::delete('/teams/{team}', [TeamController::class, 'destroy'])->name('teams.destroy');
+    Route::get('/teams/{team}/edit', [TeamController::class, 'edit'])->name('teams.edit');
+    Route::put('/teams/{team}', [TeamController::class, 'update'])->name('teams.update');
 });
 
 //Route::get('/teams/{team}', function ($team) {return view('teams', ['team' => $team]);});

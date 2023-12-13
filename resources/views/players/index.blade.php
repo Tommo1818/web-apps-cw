@@ -10,6 +10,9 @@
             </li>
         @endforeach
     </ul>
+
+    @if (Auth::user()->role == 'admin')
+        <a href="{{ route('players.create') }}" class="button" style="background-color: #A6FFA8; color: #000000;">add player</a>
+    @endif
     {{ $players->links() }}
-    <a href = "{{ route('players.create') }}" class="button">add player</a>
 @endsection

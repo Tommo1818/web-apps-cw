@@ -61,7 +61,9 @@ class PlayerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $teams = Team::all();
+        $player = Player::findOrFail($id);
+        return view('players.edit', ['player' => $player], ['teams' => $teams]);
     }
 
     /**
@@ -69,7 +71,20 @@ class PlayerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'in_game_name' => 'required|max:255',
+            'date_of_birth' => 'required|date',
+            'team_id' => 'required|integer',
+            'country' => 'required|max:255',
+        ]);
+        $a = Player::findOrFail($id);
+        $a->in_game_name = $validated['in_game_name'];
+        $a->date_of_birth = $validated['date_of_birth'];
+        $a->team_id = $validated['team_id'];
+        $a->country = $validated['country'];
+        $a->save();
+        session()->flash('message', 'Player updated successfully!');
+        return redirect()->route('players.index');
     }
 
     /**
