@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+/*
     Route::get('/players/create', [PlayerController::class, 'create'])->name('players.create');
     Route::get('/players/{player}', [PlayerController::class, 'show'])->name('players.show');
     Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
@@ -44,6 +44,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/teams/{team}', [TeamController::class, 'destroy'])->name('teams.destroy');
     Route::get('/teams/{team}/edit', [TeamController::class, 'edit'])->name('teams.edit');
     Route::put('/teams/{team}', [TeamController::class, 'update'])->name('teams.update');
+    */
+    Route::resource('players', PlayerController::class);
+    Route::resource('teams', TeamController::class);
 });
 
 //Route::get('/teams/{team}', function ($team) {return view('teams', ['team' => $team]);});

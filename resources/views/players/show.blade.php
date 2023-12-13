@@ -21,5 +21,53 @@
             <button class="button" style="background-color: #FF9393; color: #000000;">Delete Player</button>
         </form>
     @endif
+
+    <h1 class="small-title">Add Comment</h1>
+
+    <div id = "app">
+    <input type="text" style="background-color: #FFFFFF; color: #000000" v-model = 'commentIn'>
+    <button class="button" @click="addComment()">Add Comment</button>
+
+    <h1 class="small-title">Comments ({{ count($comments) }})</h1>
+    <ul>
+        @foreach ($comments as $comment)
+        <li style="background-color: #4a6283; color: #FFFFFFF;">{{$comment->user->name}}:</li>
+        <li>{{$comment->comment}}</li>
+        @endforeach
+    </ul>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                comments: [],
+                commentIn: '',
+                authid: {{ Auth::user()->id }}
+            },
+            methods: {
+                addComment() {
+                    axios.post("{{route('comments.store')}}", {
+                        comment: this.commentIn,
+                        user_id: {{ Auth::user()->id }},
+                        player_id: {{ $player->id }},
+                    })
+                    .then(response => {
+                        this.comments.push(response.data);
+                        this.commentIn = '';
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+                }
+            }
+        });
+    </script>
+
+    <ul>
     <button class="button" onclick="window.location='{{ route('players.index')}}'">back to index</button>
+    </ul>
+    
 @endsection

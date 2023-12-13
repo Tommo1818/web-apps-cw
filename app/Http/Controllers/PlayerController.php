@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Comment;
 use App\Models\Team;
 use App\Models\Player;
 use Illuminate\Http\Request;
@@ -52,8 +54,10 @@ class PlayerController extends Controller
      */
     public function show(string $id)
     {
+        $users = User::all();
+        $comments = Comment::where('player_id', $id)->get();
         $player = Player::findOrFail($id);
-        return view('players.show', ['player' => $player]);
+        return view('players.show', ['player' => $player, 'comments' => $comments, 'users' => $users]);
     }
 
     /**
