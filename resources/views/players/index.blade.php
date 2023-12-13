@@ -10,4 +10,6 @@
             </li>
         @endforeach
     </ul>
+    {{ $players->links() }}
+    <a href = "{{ route('players.create') }}" class="button">add player</a>
 @endsection

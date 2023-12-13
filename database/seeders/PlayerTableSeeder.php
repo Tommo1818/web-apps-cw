@@ -61,7 +61,7 @@ class PlayerTableSeeder extends Seeder
         $f->country = 'Ukraine';
         $f->save();
 
-        Player::factory()->count(10)->create();
+        Player::factory()->count(50)->create();
     }
 }
 

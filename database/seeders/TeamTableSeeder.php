@@ -26,6 +26,42 @@ class TeamTableSeeder extends Seeder
         $b->country = 'Denmark';
         $b->sponsor_id = 1;
         $b->save();
+
+        $c = new Team;
+        $c->id = 3;
+        $c->name = 'G2';
+        $c->country = 'France';
+        $c->sponsor_id = 1;
+        $c->save();
+
+        $d = new Team;
+        $d->id = 4;
+        $d->name = 'Vitality';
+        $d->country = 'France';
+        $d->sponsor_id = 1;
+        $d->save();
+
+        $e = new Team;
+        $e->id = 5;
+        $e->name = 'Liquid';
+        $e->country = 'USA';
+        $e->sponsor_id = 1;
+        $e->save();
+
+        $f = new Team;
+        $f->id = 6;
+        $f->name = 'Faze';
+        $f->country = 'USA';
+        $f->sponsor_id = 1;
+        $f->save();
+
+        $g = new Team;
+        $g->id = 7;
+        $g->name = 'Fnatic';
+        $g->country = 'Sweden';
+        $g->sponsor_id = 1;
+        $g->save();
+        
     }
 }
 
