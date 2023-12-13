@@ -29,12 +29,14 @@
     <button class="button" @click="addComment()">Add Comment</button>
 
     <h1 class="small-title">Comments ({{ count($comments) }})</h1>
-    <ul>
+
+    <ul id = 'commentList'>
         @foreach ($comments as $comment)
         <li style="background-color: #4a6283; color: #FFFFFFF;">{{$comment->user->name}}:</li>
         <li>{{$comment->comment}}</li>
         @endforeach
     </ul>
+
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -43,7 +45,6 @@
         var app = new Vue({
             el: '#app',
             data: {
-                comments: [],
                 commentIn: '',
                 authid: {{ Auth::user()->id }}
             },
@@ -55,7 +56,18 @@
                         player_id: {{ $player->id }},
                     })
                     .then(response => {
-                        this.comments.push(response.data);
+                        console.log(response);
+                        if (response.data == true) {
+                            var ul = document.getElementById("commentList");
+                            var li = document.createElement("li");
+                            li.style.backgroundColor = "#4a6283";
+                            li.style.color = "#FFFFFFF";
+                            li.appendChild(document.createTextNode("{{ Auth::user()->name }}" + ":"));
+                            var li2 = document.createElement("li");
+                            li2.appendChild(document.createTextNode(this.commentIn));
+                            ul.appendChild(li);
+                            ul.appendChild(li2);
+                        }
                         this.commentIn = '';
                     })
                     .catch(error => {
