@@ -32,7 +32,7 @@
 
     <ul id = 'commentList'>
         @foreach ($comments as $comment)
-        <li style="background-color: #4a6283; color: #FFFFFFF;">{{$comment->user->name}}:</li>
+        <li style="background-color: #4a6283; color: #FFFFFFF;"><a href="{{ route('profile.show', $comment->user->id) }}">{{$comment->user->name}}</a>:</li>
         <li>{{$comment->comment}}</li>
         @endforeach
     </ul>

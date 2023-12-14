@@ -8,9 +8,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
+use App\Models\Comment;
+use App\Models\Player;
 
 class ProfileController extends Controller
 {
+    /**
+     * Display the user's profile.
+     */
+    public function show($id): View
+    {
+        $comments = User::findOrFail($id)->comments;
+        $user = User::findOrFail($id);
+        return view('profile.show', ['user' => $user, 'comments' => $comments]);
+    }
+
     /**
      * Display the user's profile form.
      */
